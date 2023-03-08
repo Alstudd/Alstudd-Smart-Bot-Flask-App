@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="static/bot.css">
+</head>
+
+<body>
+  <div class="chatbot-container">
+    <div class="chatbot-header">Chatbot</div>
+    <form action="submit" method="POST">
+      <div class="chatbot-conversation" id="chatbot-conversation">
+        <!-- {% for message in get_flashed_messages() %} -->
+        <div class="user-message" id="user-message">
+          <p>{{user_input}}</p>
+        </div>
+        <!-- {% endfor %} -->
+        <div class="chatbot-message" id="chatbot-message">
+          <p>{{answer}}</p>
+        </div>
+      </div>
+      <div class="chatbot-input-container">
+        <input type="text" name="chatbot-input" id="chatbot-input" placeholder="Type your message...">
+        <button onclick="submitMessage()" type="submit" id="chatbot-send-btn">Send</button>
+      </div>
+  </div>
+  </form>
+  <script src="static/bot.js"></script>
+</body>
+
+</html>
